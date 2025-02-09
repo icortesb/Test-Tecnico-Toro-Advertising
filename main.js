@@ -15,25 +15,73 @@ const steps = [
 
 const moviesForSteps = {
     1: {
-        first_movie: ['images/top_gun.webp', 'images/bullet_train.webp', 'images/thor_love_and_thunder.webp'],
-        second_movie: ['images/purple_hearts.webp', 'images/black_panther_wakanda_forever.webp', 'images/the_godfather.webp'],
-        third_movie: ['images/sing_2.webp', 'images/the_bad_guys.webp', 'images/puss_in_boots_the_last_wish.webp']
+        first_movie: [
+            { name: 'Top Gun', url: 'images/top_gun.webp' },
+            { name: 'Bullet Train', url: 'images/bullet_train.webp' },
+            { name: 'Thor: Love and Thunder', url: 'images/thor_love_and_thunder.webp' }
+        ],
+        second_movie: [
+            { name: 'Purple Hearts', url: 'images/purple_hearts.webp' },
+            { name: 'Black Panther: Wakanda Forever', url: 'images/black_panther_wakanda_forever.webp' },
+            { name: 'The Godfather', url: 'images/the_godfather.webp' }
+        ],
+        third_movie: [
+            { name: 'Sing 2', url: 'images/sing_2.webp' },
+            { name: 'The Bad Guys', url: 'images/the_bad_guys.webp' },
+            { name: 'Puss in Boots: The Last Wish', url: 'images/puss_in_boots_the_last_wish.webp' }
+        ]
     },
     2: {
         first_movie: {
-            first_movie: ['images/top_gun_maverick.webp', 'images/days_of_thunder.webp', 'images/independence_day.webp'],
-            second_movie: ['images/mad_max_fury_road.webp', 'images/john_wick.webp', 'images/the_man_from_uncle.webp'],
-            third_movie: ['images/the_batman.webp', 'images/spiderman_no_way_home.webp', 'images/the_flash.webp']
+            first_movie: [
+                { name: 'Top Gun: Maverick', url: 'images/top_gun_maverick.webp' },
+                { name: 'Days of Thunder', url: 'images/days_of_thunder.webp' },
+                { name: 'Independence Day', url: 'images/independence_day.webp' }
+            ],
+            second_movie: [
+                { name: 'Mad Max: Fury Road', url: 'images/mad_max_fury_road.webp' },
+                { name: 'John Wick', url: 'images/john_wick.webp' },
+                { name: 'The Man from U.N.C.L.E.', url: 'images/the_man_from_uncle.webp' }
+            ],
+            third_movie: [
+                { name: 'The Batman', url: 'images/the_batman.webp' },
+                { name: 'Spider-Man: No Way Home', url: 'images/spiderman_no_way_home.webp' },
+                { name: 'The Flash', url: 'images/the_flash.webp' }
+            ]
         },
         second_movie: {
-            first_movie: ['images/the_lucky_one.webp', 'images/a_walk_to_remember.webp', 'images/dear_john.webp'],
-            second_movie: ['images/avengers_endgame.webp', 'images/captain_marvel.webp', 'images/aquaman.webp'],
-            third_movie: ['images/purple_hearts4.webp', 'images/black_panther_wakanda_forever4.webp', 'images/the_godfather4.webp']
+            first_movie: [
+                { name: 'The Lucky One', url: 'images/the_lucky_one.webp' },
+                { name: 'A Walk to Remember', url: 'images/a_walk_to_remember.webp' },
+                { name: 'Dear John', url: 'images/dear_john.webp' }
+            ],
+            second_movie: [
+                { name: 'Avengers: Endgame', url: 'images/avengers_endgame.webp' },
+                { name: 'Captain Marvel', url: 'images/captain_marvel.webp' },
+                { name: 'Aquaman', url: 'images/aquaman.webp' }
+            ],
+            third_movie: [
+                { name: 'Purple Hearts 4', url: 'images/purple_hearts4.webp' },
+                { name: 'Black Panther: Wakanda Forever 4', url: 'images/black_panther_wakanda_forever4.webp' },
+                { name: 'The Godfather 4', url: 'images/the_godfather4.webp' }
+            ]
         },
         third_movie: {
-            first_movie: ['images/the_secret_life_of_pets_2.webp', 'images/zootopia.webp', 'images/incredibles_2.webp'],
-            second_movie: ['images/oceans_eleven.webp', 'images/madagascar.webp', 'images/scooby_doo_the_mystery_begins.webp'],
-            third_movie: ['images/shrek_2.webp', 'images/puss_in_boots.webp', 'images/trolls_world_tour.webp']
+            first_movie: [
+                { name: 'The Secret Life of Pets 2', url: 'images/the_secret_life_of_pets_2.webp' },
+                { name: 'Zootopia', url: 'images/zootopia.webp' },
+                { name: 'Incredibles 2', url: 'images/incredibles_2.webp' }
+            ],
+            second_movie: [
+                { name: 'Ocean\'s Eleven', url: 'images/oceans_eleven.webp' },
+                { name: 'Madagascar', url: 'images/madagascar.webp' },
+                { name: 'Scooby-Doo! The Mystery Begins', url: 'images/scooby_doo_the_mystery_begins.webp' }
+            ],
+            third_movie: [
+                { name: 'Shrek 2', url: 'images/shrek_2.webp' },
+                { name: 'Puss in Boots', url: 'images/puss_in_boots.webp' },
+                { name: 'Trolls World Tour', url: 'images/trolls_world_tour.webp' }
+            ]
         }
     }
 }
@@ -48,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateMovieImages(movieId) {
         const movieImages = currentStep === 2 ? moviesForSteps[currentStep][selectedMovieId][movieId] : moviesForSteps[currentStep][movieId];
-        const [firstMovieImage, secondMovieImage, thirdMovieImage] = movieImages;
+        const [firstMovieImage, secondMovieImage, thirdMovieImage] = movieImages.map(movie => movie.url);
 
         document.getElementById('first_movie').style.backgroundImage = `url('${firstMovieImage}')`;
         document.getElementById('second_movie').style.backgroundImage = `url('${secondMovieImage}')`;
@@ -73,6 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
             updateMovieImages(movieId);
             updateStep(3, steps[2].question);
             currentStep = 3;
+        } else if (currentStep === 3) {
+            const movieImages = moviesForSteps[2][selectedMovieId][movieId];
+            // go to the movie page in imdb
+            window.open(`https://www.imdb.com/find?q=${movieImages[0].name}`, '_blank');
         }
     }
 
