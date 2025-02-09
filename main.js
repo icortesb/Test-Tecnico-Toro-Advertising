@@ -98,11 +98,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateMovieImages(movieId) {
         const movieImages = currentStep === keysCount ? moviesForSteps[currentStep][selectedMovieId][movieId] : moviesForSteps[currentStep][movieId];
-        const [firstMovieImage, secondMovieImage, thirdMovieImage] = movieImages.map(movie => movie.url);
+        const [firstMovie, secondMovie, thirdMovie] = movieImages;
 
-        document.getElementById('first_movie').style.backgroundImage = `url('${firstMovieImage}')`;
-        document.getElementById('second_movie').style.backgroundImage = `url('${secondMovieImage}')`;
-        document.getElementById('third_movie').style.backgroundImage = `url('${thirdMovieImage}')`;
+        const firstMovieElement = document.getElementById('first_movie');
+        const secondMovieElement = document.getElementById('second_movie');
+        const thirdMovieElement = document.getElementById('third_movie');
+
+        firstMovieElement.style.backgroundImage = `url('${firstMovie.url}')`;
+        firstMovieElement.setAttribute('aria-label', firstMovie.name);
+
+        secondMovieElement.style.backgroundImage = `url('${secondMovie.url}')`;
+        secondMovieElement.setAttribute('aria-label', secondMovie.name);
+
+        thirdMovieElement.style.backgroundImage = `url('${thirdMovie.url}')`;
+        thirdMovieElement.setAttribute('aria-label', thirdMovie.name);
     }
 
     function updateStep(step, question) {
