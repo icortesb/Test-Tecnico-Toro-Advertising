@@ -16,71 +16,71 @@ const steps = [
 const moviesForSteps = {
     1: {
         first_movie: [
-            { name: 'Top Gun', url: 'images/top_gun.webp' },
-            { name: 'Bullet Train', url: 'images/bullet_train.webp' },
-            { name: 'Thor: Love and Thunder', url: 'images/thor_love_and_thunder.webp' }
+            { name: "Top Gun", url: "images/top_gun.webp" },
+            { name: "Bullet Train", url: "images/bullet_train.webp" },
+            { name: "Thor: Love and Thunder", url: "images/thor_love_and_thunder.webp" }
         ],
         second_movie: [
-            { name: 'Purple Hearts', url: 'images/purple_hearts.webp' },
-            { name: 'Black Panther: Wakanda Forever', url: 'images/black_panther_wakanda_forever.webp' },
-            { name: 'The Godfather', url: 'images/the_godfather.webp' }
+            { name: "Purple Hearts", url: "images/purple_hearts.webp" },
+            { name: "Black Panther: Wakanda Forever", url: "images/black_panther_wakanda_forever.webp" },
+            { name: "The Godfather", url: "images/the_godfather.webp" }
         ],
         third_movie: [
-            { name: 'Sing 2', url: 'images/sing_2.webp' },
-            { name: 'The Bad Guys', url: 'images/the_bad_guys.webp' },
-            { name: 'Puss in Boots: The Last Wish', url: 'images/puss_in_boots_the_last_wish.webp' }
+            { name: "Sing 2", url: "images/sing_2.webp" },
+            { name: "The Bad Guys", url: "images/the_bad_guys.webp" },
+            { name: "Puss in Boots: The Last Wish", url: "images/puss_in_boots_the_last_wish.webp" }
         ]
     },
     2: {
         first_movie: {
             first_movie: [
-                { name: 'Top Gun: Maverick', url: 'images/top_gun_maverick.webp' },
-                { name: 'Days of Thunder', url: 'images/days_of_thunder.webp' },
-                { name: 'Independence Day', url: 'images/independence_day.webp' }
+                { name: "Top Gun: Maverick", url: "images/top_gun_maverick.webp" },
+                { name: "Days of Thunder", url: "images/days_of_thunder.webp" },
+                { name: "Independence Day", url: "images/independence_day.webp" }
             ],
             second_movie: [
-                { name: 'Mad Max: Fury Road', url: 'images/mad_max_fury_road.webp' },
-                { name: 'John Wick', url: 'images/john_wick.webp' },
-                { name: 'The Man from U.N.C.L.E.', url: 'images/the_man_from_uncle.webp' }
+                { name: "Mad Max: Fury Road", url: "images/mad_max_fury_road.webp" },
+                { name: "John Wick", url: "images/john_wick.webp" },
+                { name: "The Man from U.N.C.L.E.", url: "images/the_man_from_uncle.webp" }
             ],
             third_movie: [
-                { name: 'The Batman', url: 'images/the_batman.webp' },
-                { name: 'Spider-Man: No Way Home', url: 'images/spiderman_no_way_home.webp' },
-                { name: 'The Flash', url: 'images/the_flash.webp' }
+                { name: "The Batman", url: "images/the_batman.webp" },
+                { name: "Spider-Man: No Way Home", url: "images/spiderman_no_way_home.webp" },
+                { name: "The Flash", url: "images/the_flash.webp" }
             ]
         },
         second_movie: {
             first_movie: [
-                { name: 'The Lucky One', url: 'images/the_lucky_one.webp' },
-                { name: 'A Walk to Remember', url: 'images/a_walk_to_remember.webp' },
-                { name: 'Dear John', url: 'images/dear_john.webp' }
+                { name: "The Lucky One", url: "images/the_lucky_one.webp" },
+                { name: "A Walk to Remember", url: "images/a_walk_to_remember.webp" },
+                { name: "Dear John", url: "images/dear_john.webp" }
             ],
             second_movie: [
-                { name: 'Avengers: Endgame', url: 'images/avengers_endgame.webp' },
-                { name: 'Captain Marvel', url: 'images/captain_marvel.webp' },
-                { name: 'Aquaman', url: 'images/aquaman.webp' }
+                { name: "Avengers: Endgame", url: "images/avengers_endgame.webp" },
+                { name: "Captain Marvel", url: "images/captain_marvel.webp" },
+                { name: "Aquaman", url: "images/aquaman.webp" }
             ],
             third_movie: [
-                { name: 'Goodfellas', url: 'images/goodfellas.webp' },
-                { name: 'Scarface', url: 'images/scarface.webp' },
-                { name: 'Casino', url: 'images/casino.webp' }
+                { name: "Goodfellas", url: "images/goodfellas.webp" },
+                { name: "Scarface", url: "images/scarface.webp" },
+                { name: "Casino", url: "images/casino.webp" }
             ]
         },
         third_movie: {
             first_movie: [
-                { name: 'The Secret Life of Pets 2', url: 'images/the_secret_life_of_pets_2.webp' },
-                { name: 'Zootopia', url: 'images/zootopia.webp' },
-                { name: 'Incredibles 2', url: 'images/incredibles_2.webp' }
+                { name: "The Secret Life of Pets 2", url: "images/the_secret_life_of_pets_2.webp" },
+                { name: "Zootopia", url: "images/zootopia.webp" },
+                { name: "Incredibles 2", url: "images/incredibles_2.webp" }
             ],
             second_movie: [
-                { name: 'Ocean\'s Eleven', url: 'images/oceans_eleven.webp' },
-                { name: 'Madagascar', url: 'images/madagascar.webp' },
-                { name: 'Scooby-Doo! The Mystery Begins', url: 'images/scooby_doo_the_mystery_begins.webp' }
+                { name: "Ocean\"s Eleven", url: "images/oceans_eleven.webp" },
+                { name: "Madagascar", url: "images/madagascar.webp" },
+                { name: "Scooby-Doo! The Mystery Begins", url: "images/scooby_doo_the_mystery_begins.webp" }
             ],
             third_movie: [
-                { name: 'Shrek 2', url: 'images/shrek_2.webp' },
-                { name: 'Puss in Boots', url: 'images/puss_in_boots.webp' },
-                { name: 'Trolls World Tour', url: 'images/trolls_world_tour.webp' }
+                { name: "Shrek 2", url: "images/shrek_2.webp" },
+                { name: "Puss in Boots", url: "images/puss_in_boots.webp" },
+                { name: "Trolls World Tour", url: "images/trolls_world_tour.webp" }
             ]
         }
     }
@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let currentStep = 1;
     let selectedMovieId = '';
+    let lastMovieSelected = '';
 
     function updateMovieImages(movieId) {
         const movieImages = currentStep === 2 ? moviesForSteps[currentStep][selectedMovieId][movieId] : moviesForSteps[currentStep][movieId];
@@ -109,7 +110,23 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector(`.step[data-step="${step}"]`).classList.add('active');
     }
 
-    function handleMovieClick(movieId) {
+    function trackLastMovieSelected(event) {
+        if (currentStep === 3) {
+            const backgroundImage = event.target.style.backgroundImage.slice(5, -2);
+            console.log(`Last movie selected: ${backgroundImage}`);
+            let objectWithMovie;
+            for (let key in moviesForSteps[2][selectedMovieId]) {
+                objectWithMovie = moviesForSteps[2][selectedMovieId][key].find(movie => movie.url === backgroundImage);
+                if (objectWithMovie) break;
+            }
+            lastMovieSelected = objectWithMovie.name;
+            window.open(`https://www.imdb.com/find?q=${lastMovieSelected}`, '_blank');    
+        }
+    }
+
+    function handleMovieClick(event) {
+        const movieId = event.target.id;
+        trackLastMovieSelected(event);
         if (currentStep === 1) {
             console.log(`${movieId} clicked`);
             updateMovieImages(movieId);
@@ -121,18 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
             updateMovieImages(movieId);
             updateStep(3, steps[2].question);
             currentStep = 3;
-        } else if (currentStep === 3) {
-            const movieImages = moviesForSteps[2][selectedMovieId][movieId];
-            const movieSelector = document.getElementById('movie-selector').display = 'none';
-            // go to the movie page in imdb
-            window.open(`https://www.imdb.com/find?q=${movieImages[0].name}`, '_blank');
         }
     }
 
     moviePosters.forEach(poster => {
-        poster.addEventListener('click', () => {
-            handleMovieClick(poster.id);
-        });
+        poster.addEventListener('click', handleMovieClick);
     });
 });
 
