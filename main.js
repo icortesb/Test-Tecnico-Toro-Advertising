@@ -98,20 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateMovieImages(movieId) {
         const movieImages = currentStep === keysCount ? moviesForSteps[currentStep][selectedMovieId][movieId] : moviesForSteps[currentStep][movieId];
-        const [firstMovie, secondMovie, thirdMovie] = movieImages;
+        const [firstMovieImage, secondMovieImage, thirdMovieImage] = movieImages.map(movie => movie.url);
 
-        const firstMovieElement = document.getElementById('first_movie');
-        const secondMovieElement = document.getElementById('second_movie');
-        const thirdMovieElement = document.getElementById('third_movie');
-
-        firstMovieElement.style.backgroundImage = `url('${firstMovie.url}')`;
-        firstMovieElement.setAttribute('aria-label', firstMovie.name);
-
-        secondMovieElement.style.backgroundImage = `url('${secondMovie.url}')`;
-        secondMovieElement.setAttribute('aria-label', secondMovie.name);
-
-        thirdMovieElement.style.backgroundImage = `url('${thirdMovie.url}')`;
-        thirdMovieElement.setAttribute('aria-label', thirdMovie.name);
+        document.getElementById('first_movie').style.backgroundImage = `url('${firstMovieImage}')`;
+        document.getElementById('second_movie').style.backgroundImage = `url('${secondMovieImage}')`;
+        document.getElementById('third_movie').style.backgroundImage = `url('${thirdMovieImage}')`;
     }
 
     function updateStep(step, question) {
@@ -151,11 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     moviePosters.forEach(poster => {
         poster.addEventListener('click', handleMovieClick);
-        poster.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                handleMovieClick(event);
-            }
-        });
     });
 
     function watchMovie() {

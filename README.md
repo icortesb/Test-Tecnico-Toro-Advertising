@@ -1,4 +1,4 @@
-# Test-Tecnico-Toro-Advertising
+# Test Técnico Toro Advertising
 
 Esta es una prueba técnica para Toro Advertising para el puesto de Frontend Developer.
 
@@ -10,15 +10,19 @@ El código está organizado en funciones modulares, lo que facilita su comprensi
 
 ### Uso de eventos DOM
 
-Se han utilizado eventos DOM para manejar las interacciones del usuario, como los clics en los pósters de las películas. Esto permite una actualización eficiente de la interfaz de usuario y mejora la experiencia del usuario.
+Se han utilizado eventos DOM para manejar las interacciones del usuario, como los clics en los pósters de las películas y la navegación con el teclado. Esto permite una actualización eficiente de la interfaz de usuario y mejora la experiencia del usuario.
 
 ### Separación de responsabilidades
 
 El código está estructurado de manera que las responsabilidades están claramente separadas. Por ejemplo, la función `updateMovieImages` se encarga de actualizar las imágenes de las películas, mientras que la función `updateStep` se encarga de actualizar el paso actual y la pregunta correspondiente.
 
+### Accesibilidad
+
+Se han añadido atributos `aria` y `tabindex` para mejorar la accesibilidad del sitio web. Esto asegura que todos los elementos interactivos sean accesibles y utilizables mediante el teclado.
+
 ### Optimización de imágenes
 
-Las imágenes utilizadas en el proyecto han sido optimizadas para asegurar una carga rápida y eficiente, mejorando así el rendimiento general de la aplicación.
+Las imágenes utilizadas en el proyecto han sido optimizadas para asegurar una carga rápida y eficiente, mejorando así el rendimiento general de la aplicación. Se han utilizado formatos de imagen adecuados y se ha reducido el tamaño de los archivos sin comprometer la calidad visual.
 
 ## Escalabilidad del código
 
