@@ -86,6 +86,8 @@ const moviesForSteps = {
     }
 };
 
+const keysCount = Object.keys(moviesForSteps).length;
+
 document.addEventListener('DOMContentLoaded', () => {
     const moviePosters = document.querySelectorAll('.movie_poster');
     const currentStepElement = document.getElementById('current-step');
@@ -95,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedMovieId = '';
 
     function updateMovieImages(movieId) {
-        const movieImages = currentStep === 2 ? moviesForSteps[currentStep][selectedMovieId][movieId] : moviesForSteps[currentStep][movieId];
+        const movieImages = currentStep === keysCount ? moviesForSteps[currentStep][selectedMovieId][movieId] : moviesForSteps[currentStep][movieId];
         const [firstMovieImage, secondMovieImage, thirdMovieImage] = movieImages.map(movie => movie.url);
 
         document.getElementById('first_movie').style.backgroundImage = `url('${firstMovieImage}')`;
@@ -120,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             document.getElementById('movie-selector').style.display = 'none';
             document.getElementById('final-msg').style.display = 'flex';
-            // window.open(objectWithMovie.imdb, '_blank');  
         }
     }
 
@@ -144,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function watchMovie() {
-        window.open(objectWithMovie.imdb, '_blank');
+        window.open(objectWithMovie.imdb, '_blank', 'noopener,noreferrer');
     }
 
     document.getElementById('watch-movie').addEventListener('click', watchMovie);

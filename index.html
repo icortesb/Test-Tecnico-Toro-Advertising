@@ -4,16 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We help you choose the best movie to watch!">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>EXADS</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="EXADS">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <main>
+    <header>
         <h1 class="logo">Your Logo</h1>
-        <div id="movie-selector">
+    </header>
+    <main>
+        <section id="movie-selector">
             <div class="stepper">
                 <p class="question-text">Question <span id="current-step">1</span> of 3</p>
                 <div class="steps">
@@ -28,13 +35,13 @@
                 <div class="movie_poster" id="second_movie" data-movie="2"></div>
                 <div class="movie_poster" id="third_movie" data-movie="3"></div>
             </div>
-        </div>
-        <div id="final-msg">
+        </section>
+        <section id="final-msg">
             <h1>Watch new movies for free!</h1>
             <p>Watch any movies online for free without ads!</p>
             <p>Have fun watching your favourite movies!</p>
             <button type="button" id="watch-movie">Watch here!</button>
-        </div>
+        </section>
     </main>
     <footer>
         <div class="footer_container">
