@@ -13,19 +13,21 @@
 <body>
     <main>
         <h1 class="logo">Your Logo</h1>
-        <div class="stepper">
-            <p class="question-text">Question <span id="current-step">1</span> of 3</p>
-            <div class="steps">
-                <span class="step active" data-step="1"></span>
-                <span class="step" data-step="2"></span>
-                <span class="step" data-step="3"></span>
+        <div id="movie-selector">
+            <div class="stepper">
+                <p class="question-text">Question <span id="current-step">1</span> of 3</p>
+                <div class="steps">
+                    <span class="step active" data-step="1"></span>
+                    <span class="step" data-step="2"></span>
+                    <span class="step" data-step="3"></span>
+                </div>
             </div>
-        </div>
-        <h2 class="question-title">Choose one of the three movies</h2>
-        <div class="movies_container">
-            <div class="movie_poster"></div>
-            <div class="movie_poster"></div>
-            <div class="movie_poster"></div>
+            <h2 class="question-title" id="question-title">Choose one of the three movies</h2>
+            <div class="movies_container">
+                <div class="movie_poster" id="first_movie" data-movie="1"></div>
+                <div class="movie_poster" id="second_movie" data-movie="2"></div>
+                <div class="movie_poster" id="third_movie" data-movie="3"></div>
+            </div>
         </div>
     </main>
     <footer>
@@ -34,5 +36,6 @@
             <span>Terms of use</span>
         </div>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>
