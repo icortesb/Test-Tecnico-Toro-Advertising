@@ -22,6 +22,11 @@ body {
     }
 }
 
+:focus {
+    outline: 2px solid #34d399;
+    outline-offset: 2px;
+}
+
 .logo {
     background-color: rgba(0, 0, 0, 0.4);
     border: 2px solid hsla(354, 64%, 48%, 0.5);
@@ -146,13 +151,18 @@ body {
             transition: background-image 0.3s ease-out;
         }
     }
+
+    .movie_poster:focus {
+        outline: 2px solid #34d399;
+        outline-offset: 2px;
+    }
 }
 
-#movie-selector {
+.movie_selector {
     display: block;
 }
 
-#final-msg {
+.final_msg {
     display: none;
     justify-content: center;
     align-items: center;
@@ -202,6 +212,21 @@ body {
             background-color: #FE3F11;
         }
     }
+
+    button:focus {
+        outline: 2px solid #34d399;
+        outline-offset: 2px;
+    }
+}
+
+.noscript_message {
+    background-color: #ffcc00;
+    color: #000;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #000;
+    margin: 1rem;
+    border-radius: 4px;
 }
 
 footer {

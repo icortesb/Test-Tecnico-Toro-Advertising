@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 objectWithMovie = moviesForSteps[2][selectedMovieId][key].find(movie => movie.url === backgroundImage);
                 if (objectWithMovie) break;
             }
-            document.getElementById('movie-selector').style.display = 'none';
-            document.getElementById('final-msg').style.display = 'flex';
+            document.getElementById('js-movie-selector').style.display = 'none';
+            document.getElementById('js-final-msg').style.display = 'flex';
         }
     }
 
@@ -142,6 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     moviePosters.forEach(poster => {
         poster.addEventListener('click', handleMovieClick);
+        poster.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                handleMovieClick(event);
+            }
+        });
     });
 
     function watchMovie() {

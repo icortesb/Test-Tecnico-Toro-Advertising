@@ -16,37 +16,42 @@
 </head>
 
 <body>
+    <noscript class="noscript_message">
+        <div>
+            <p>JavaScript is disabled in your browser. Please enable JavaScript to use this site.</p>
+        </div>
+    </noscript>
     <header>
-        <h1 class="logo">Your Logo</h1>
+        <h1 class="logo" tabindex="0">Your Logo</h1>
     </header>
     <main>
-        <section id="movie-selector">
+        <section id="js-movie-selector" class="movie_selector" aria-labelledby="question-title">
             <div class="stepper">
                 <p class="question-text">Question <span id="current-step">1</span> of 3</p>
                 <div class="steps">
-                    <span class="step active" data-step="1"></span>
-                    <span class="step" data-step="2"></span>
-                    <span class="step" data-step="3"></span>
+                    <span class="step active" data-step="1" tabindex="0"></span>
+                    <span class="step" data-step="2" tabindex="0"></span>
+                    <span class="step" data-step="3" tabindex="0"></span>
                 </div>
             </div>
-            <h2 class="question-title" id="question-title">Choose one of the three movies</h2>
+            <h2 class="question-title" id="question-title" tabindex="0">Choose one of the three movies</h2>
             <div class="movies_container">
-                <div class="movie_poster" id="first_movie" data-movie="1"></div>
-                <div class="movie_poster" id="second_movie" data-movie="2"></div>
-                <div class="movie_poster" id="third_movie" data-movie="3"></div>
+                <div class="movie_poster" id="first_movie" data-movie="1" tabindex="0" role="button" aria-label="First Movie"></div>
+                <div class="movie_poster" id="second_movie" data-movie="2" tabindex="0" role="button" aria-label="Second Movie"></div>
+                <div class="movie_poster" id="third_movie" data-movie="3" tabindex="0" role="button" aria-label="Third Movie"></div>
             </div>
         </section>
-        <section id="final-msg">
-            <h1>Watch new movies for free!</h1>
-            <p>Watch any movies online for free without ads!</p>
-            <p>Have fun watching your favourite movies!</p>
-            <button type="button" id="watch-movie">Watch here!</button>
+        <section id="js-final-msg" class="final_msg" aria-labelledby="final-msg-title">
+            <h1 id="final-msg-title" tabindex="0">Watch new movies for free!</h1>
+            <p tabindex="0">Watch any movies online for free without ads!</p>
+            <p tabindex="0">Have fun watching your favourite movies!</p>
+            <button type="button" id="watch-movie" tabindex="0">Watch here!</button>
         </section>
     </main>
     <footer>
         <div class="footer_container">
-            <span>Privacy Policy</span>
-            <span>Terms of use</span>
+            <span tabindex="0">Privacy Policy</span>
+            <span tabindex="0">Terms of use</span>
         </div>
     </footer>
     <script src="main.js"></script>
