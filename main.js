@@ -61,9 +61,9 @@ const moviesForSteps = {
                 { name: 'Aquaman', url: 'images/aquaman.webp' }
             ],
             third_movie: [
-                { name: 'Purple Hearts 4', url: 'images/purple_hearts4.webp' },
-                { name: 'Black Panther: Wakanda Forever 4', url: 'images/black_panther_wakanda_forever4.webp' },
-                { name: 'The Godfather 4', url: 'images/the_godfather4.webp' }
+                { name: 'Goodfellas', url: 'images/goodfellas.webp' },
+                { name: 'Scarface', url: 'images/scarface.webp' },
+                { name: 'Casino', url: 'images/casino.webp' }
             ]
         },
         third_movie: {
@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentStep = 3;
         } else if (currentStep === 3) {
             const movieImages = moviesForSteps[2][selectedMovieId][movieId];
+            const movieSelector = document.getElementById('movie-selector').display = 'none';
             // go to the movie page in imdb
             window.open(`https://www.imdb.com/find?q=${movieImages[0].name}`, '_blank');
         }
