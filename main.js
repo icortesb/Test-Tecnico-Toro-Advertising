@@ -92,51 +92,70 @@ document.addEventListener('DOMContentLoaded', () => {
     const moviePosters = document.querySelectorAll('.movie_poster');
     const currentStepElement = document.getElementById('current-step');
     const questionTitleElement = document.getElementById('question-title');
-    
+    const movieSelectorSection = document.getElementById('js-movie-selector');
+    const finalMessageSection = document.getElementById('js-final-msg');
+    const watchMovieButton = document.getElementById('watch-movie');
+
     let currentStep = 1;
     let selectedMovieId = '';
+    let finalMovie = null;
 
     function updateMovieImages(movieId) {
-        const movieImages = currentStep === keysCount ? moviesForSteps[currentStep][selectedMovieId][movieId] : moviesForSteps[currentStep][movieId];
-        const [firstMovieImage, secondMovieImage, thirdMovieImage] = movieImages.map(movie => movie.url);
+        let movieImages;
 
-        document.getElementById('first_movie').style.backgroundImage = `url('${firstMovieImage}')`;
-        document.getElementById('second_movie').style.backgroundImage = `url('${secondMovieImage}')`;
-        document.getElementById('third_movie').style.backgroundImage = `url('${thirdMovieImage}')`;
-    }
-
-    function updateStep(step, question) {
-        currentStepElement.innerText = step;
-        questionTitleElement.innerText = question;
-        document.querySelector(`.step[data-step="${step}"]`).classList.add('active');
-    }
-    
-    let objectWithMovie;
-
-    function trackLastMovieSelected(event) {
-        if (currentStep === 3) {
-            const backgroundImage = event.target.style.backgroundImage.slice(5, -2);
-            for (let key in moviesForSteps[2][selectedMovieId]) {
-                objectWithMovie = moviesForSteps[2][selectedMovieId][key].find(movie => movie.url === backgroundImage);
-                if (objectWithMovie) break;
-            }
-            document.getElementById('js-movie-selector').style.display = 'none';
-            document.getElementById('js-final-msg').style.display = 'flex';
+        if (currentStep === 1) {
+            movieImages = moviesForSteps[1][movieId];
+            console.log(`EN el paso 1, las imagenes son: ${JSON.stringify(movieImages)}`);
+        } else if (currentStep === 2 && selectedMovieId) {
+            movieImages = moviesForSteps[2]?.[selectedMovieId]?.[movieId] || [];
+            console.log(`EN el paso 2, las imagenes son: ${JSON.stringify(movieImages)}`);
+        } else {
+            return;
         }
+
+        if (movieImages.length === 3) {
+            document.getElementById('first_movie').style.backgroundImage = `url('${movieImages[0].url}')`;
+            document.getElementById('second_movie').style.backgroundImage = `url('${movieImages[1].url}')`;
+            document.getElementById('third_movie').style.backgroundImage = `url('${movieImages[2].url}')`;
+        }
+    }
+
+    function updateStep(stepIndex) {
+        currentStep = stepIndex;
+        currentStepElement.innerText = stepIndex;
+        questionTitleElement.innerText = steps[stepIndex - 1].question;
+        document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
+        document.querySelector(`.step[data-step="${stepIndex}"]`).classList.add('active');
     }
 
     function handleMovieClick(event) {
         const movieId = event.target.id;
-        trackLastMovieSelected(event);
+
         if (currentStep === 1) {
-            updateMovieImages(movieId);
-            updateStep(2, steps[1].question);
-            currentStep = 2;
             selectedMovieId = movieId;
+            updateMovieImages(movieId);
+            updateStep(2);
         } else if (currentStep === 2) {
             updateMovieImages(movieId);
-            updateStep(3, steps[2].question);
-            currentStep = 3;
+            updateStep(3);
+        } else if (currentStep === 3) {
+            const selectedImage = event.target.style.backgroundImage.slice(5, -2);
+            if (moviesForSteps[2]?.[selectedMovieId]) {
+                for (let key in moviesForSteps[2][selectedMovieId]) {
+                    finalMovie = moviesForSteps[2][selectedMovieId][key].find(movie => movie.url === selectedImage);
+                    if (finalMovie) break;
+                }
+            }
+            if (finalMovie) {
+                movieSelectorSection.style.display = 'none';
+                finalMessageSection.style.display = 'flex';
+            }
+        }
+    }
+
+    function watchMovie() {
+        if (finalMovie) {
+            window.open(finalMovie.imdb, '_blank', 'noopener,noreferrer');
         }
     }
 
@@ -144,11 +163,5 @@ document.addEventListener('DOMContentLoaded', () => {
         poster.addEventListener('click', handleMovieClick);
     });
 
-    function watchMovie() {
-        window.open(objectWithMovie.imdb, '_blank', 'noopener,noreferrer');
-    }
-
-    document.getElementById('watch-movie').addEventListener('click', watchMovie);
+    watchMovieButton.addEventListener('click', watchMovie);
 });
-
-
