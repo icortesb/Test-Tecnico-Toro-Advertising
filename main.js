@@ -86,7 +86,6 @@ const moviesForSteps = {
     }
 };
 
-const keysCount = Object.keys(moviesForSteps).length;
 
 document.addEventListener('DOMContentLoaded', () => {
     const moviePosters = document.querySelectorAll('.movie_poster');
